@@ -1,0 +1,26 @@
+.form {
+  padding-bottom: 30px;
+  width: 90%;
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.input {
+  width: 100%;
+  margin: 0 16px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 24px;
+  padding: 10px;
+}
+.button {
+  width: 130px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.button:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}

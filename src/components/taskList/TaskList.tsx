@@ -1,18 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import TaskItem from '../taskItem/TaskItem';
-import { selectTasks } from '../../redux/tasksSlice';
+import React from "react";
+import "./TaskList.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import TaskItem from "../taskItem/TaskItem";
+import { selectTasks } from "../../redux/tasksSlice";
 
 const TaskList: React.FC = () => {
   const tasks = useSelector((state: RootState) => selectTasks(state));
 
   return (
-    <div>
-      {tasks.map(task => (
+    <ul className="list">
+      {tasks.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
-    </div>
+    </ul>
   );
 };
 
