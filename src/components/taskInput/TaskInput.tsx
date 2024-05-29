@@ -23,6 +23,7 @@ export const TaskInput: React.FC = () => {
         type="text"
         value={taskTitle}
         onChange={(e) => setTaskTitle(e.target.value)}
+        placeholder="Start typing here..."
       />
       <button className="button" type="submit">
         Add Task
