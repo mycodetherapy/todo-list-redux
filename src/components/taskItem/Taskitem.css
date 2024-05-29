@@ -7,6 +7,11 @@
   margin: 16px 0;
   padding: 16px;
 }
+.task:focus-within,
+.task:hover {
+  
+  border: 1px solid #fff;
+}
 .task__content {
   font-size: 20px;
   width: 100%;
@@ -30,22 +35,24 @@
   object-fit: cover;
   object-position: center;
 }
-
-.task__progress {
+.tusk__button_move {
+  background: #fff url(../../images/move.svg) no-repeat center;
+  cursor:grab
+}
+.task__button_pending {
   background: #fff url(../../images/timer_icon.svg) no-repeat center;
 }
 
-.task__progress_complited {
+.task__button_complited {
   background-image: url(../../images/tick.svg);
 }
 
-.task__remove {
+.task__button_remove {
   background: url(../../images/close-icon-s.svg) no-repeat center;
   margin: 0;
 }
 
-.task__progress:hover,
-.task__remove:hover {
+.task__button:hover {
   opacity: 0.7;
   transition: 0.3s;
 }

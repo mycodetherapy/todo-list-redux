@@ -53,10 +53,14 @@ const tasksSlice = createSlice({
     ) => {
       state.filter = action.payload;
     },
+    reorderTasks: (state, action: PayloadAction<{ startIndex: number; endIndex: number }>) => {
+      const [removed] = state.tasks.splice(action.payload.startIndex, 1);
+      state.tasks.splice(action.payload.endIndex, 0, removed);
+    },
   },
 });
 
-export const { addTask, removeTask, toggleTask, updateTaskTitle, setFilter } =
+export const { addTask, removeTask, toggleTask, updateTaskTitle, setFilter, reorderTasks } =
   tasksSlice.actions;
 
 export const selectTasks = (state: RootState) => {
