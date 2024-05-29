@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/tasksSlice";
 import { AppDispatch } from "../../redux/store";
 
-const TaskInput: React.FC = () => {
+export const TaskInput: React.FC = () => {
   const [taskTitle, setTaskTitle] = useState("");
   const dispatch: AppDispatch = useDispatch();
 
@@ -30,5 +30,3 @@ const TaskInput: React.FC = () => {
     </form>
   );
 };
-
-export default TaskInput;

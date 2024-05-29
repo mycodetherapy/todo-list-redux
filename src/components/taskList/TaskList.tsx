@@ -2,10 +2,10 @@ import React from "react";
 import "./TaskList.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../redux/store";
-import TaskItem from "../taskItem/TaskItem";
 import { reorderTasks, selectTasks } from "../../redux/tasksSlice";
+import { TaskItem } from "../taskItem/TaskItem";
 
-const TaskList: React.FC = () => {
+export const TaskList: React.FC = () => {
   const tasks = useSelector((state: RootState) => selectTasks(state));
   const dispatch: AppDispatch = useDispatch();
 
@@ -49,4 +49,3 @@ const TaskList: React.FC = () => {
   );
 };
 
-export default TaskList;

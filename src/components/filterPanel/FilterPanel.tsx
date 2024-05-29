@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { selectFilter, setFilter } from "../../redux/tasksSlice";
 
-const FilterPanel: React.FC = () => {
+export const FilterPanel: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const filter = useSelector(selectFilter);
 
@@ -37,4 +37,3 @@ const FilterPanel: React.FC = () => {
   );
 };
 
-export default FilterPanel;

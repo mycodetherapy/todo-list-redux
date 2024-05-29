@@ -13,7 +13,7 @@ interface TaskItemProps {
   task: Task;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
+export const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   const dispatch: AppDispatch = useDispatch();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,4 +44,4 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
   );
 };
 
-export default TaskItem;
+
