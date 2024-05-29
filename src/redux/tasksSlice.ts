@@ -9,10 +9,12 @@ interface Task {
 
 interface TasksState {
   tasks: Task[];
+  filter: "all" | "completed" | "incomplete";
 }
 
 const initialState: TasksState = {
   tasks: [],
+  filter: "all",
 };
 
 const tasksSlice = createSlice({
@@ -45,12 +47,30 @@ const tasksSlice = createSlice({
         task.title = action.payload.title;
       }
     },
+    setFilter: (
+      state,
+      action: PayloadAction<"all" | "completed" | "incomplete">
+    ) => {
+      state.filter = action.payload;
+    },
   },
 });
 
-export const { addTask, removeTask, toggleTask, updateTaskTitle } =
+export const { addTask, removeTask, toggleTask, updateTaskTitle, setFilter } =
   tasksSlice.actions;
 
-export const selectTasks = (state: RootState) => state.tasks.tasks;
+export const selectTasks = (state: RootState) => {
+  const { tasks, filter } = state.tasks;
+  switch (filter) {
+    case "completed":
+      return tasks.filter((task) => task.completed);
+    case "incomplete":
+      return tasks.filter((task) => !task.completed);
+    default:
+      return tasks;
+  }
+};
+
+export const selectFilter = (state: RootState) => state.tasks.filter;
 
 export default tasksSlice.reducer;
