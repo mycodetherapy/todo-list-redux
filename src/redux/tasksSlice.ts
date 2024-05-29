@@ -7,7 +7,7 @@ interface Task {
   completed: boolean;
 }
 
-interface TasksState {
+export interface TasksState {
   tasks: Task[];
   filter: "all" | "completed" | "incomplete";
 }

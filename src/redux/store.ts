@@ -1,11 +1,31 @@
 import { configureStore } from "@reduxjs/toolkit";
-import tasksReducer from "../redux/tasksSlice";
+import { loadState, saveState } from "./utils";
+import tasksReducer, { TasksState } from "../redux/tasksSlice";
 
-export const store = configureStore({
+const initialTasksState: TasksState = {
+  tasks: [],
+  filter: 'all',
+};
+
+const preloadedState = loadState();
+
+const store = configureStore({
   reducer: {
     tasks: tasksReducer,
   },
+  preloadedState: {
+    tasks: preloadedState?.tasks || initialTasksState,
+  },
+});
+
+store.subscribe(() => {
+  saveState(store.getState());
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+export default store;
+
+
+
