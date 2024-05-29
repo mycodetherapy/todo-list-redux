@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/todo-list-redux/static/css/main.d3e96db1.css",
+    "main.js": "/todo-list-redux/static/js/main.3f92ffc3.js",
+    "static/media/timer_icon.svg": "/todo-list-redux/static/media/timer_icon.8e2c846104448feb73c8.svg",
+    "static/media/move.svg": "/todo-list-redux/static/media/move.ffa0221a74ade2195854.svg",
+    "index.html": "/todo-list-redux/index.html",
+    "static/media/tick.svg": "/todo-list-redux/static/media/tick.3bccaba816be46b69971.svg",
+    "static/media/close-icon-s.svg": "/todo-list-redux/static/media/close-icon-s.622e8cdafa2222aa7c54.svg",
+    "main.d3e96db1.css.map": "/todo-list-redux/static/css/main.d3e96db1.css.map",
+    "main.3f92ffc3.js.map": "/todo-list-redux/static/js/main.3f92ffc3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3e96db1.css",
+    "static/js/main.3f92ffc3.js"
+  ]
+}
