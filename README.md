@@ -9,4 +9,6 @@
 3. `npm install`
 4. `npm start`
 
+Tests can be run with the `npm test` command
+
 ### Happy use!
